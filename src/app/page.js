@@ -1,29 +1,12 @@
-import HomeSelect from '../components/HomeSelect'
-
+import HomeSelect from "../components/HomeSelect";
 
 export default function Home() {
-
-
     return (
-        <div className='flex flex-col items-center'>
-
+        <div className="flex flex-col items-center justify-center">
             
-<h1 className="text-[16rem]  text-[#ede0d0cc]">pure audio </h1>
-            <div>
-                <div>
+                <h1 className="title mb-5 leading-none text-[#ede0d0] text-[9rem]">pure audio</h1>
 
-                </div>
-
-                <div>
-                    <HomeSelect/>
-                    <button></button>
-                </div>
-
-                <div>
-
-                </div>
-            </div>
-
+            <HomeSelect />
         </div>
     );
 }

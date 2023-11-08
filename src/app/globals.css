@@ -27,3 +27,16 @@
     position: relative; /* Establece la posición relativa */
     z-index: 0; /* Coloca la imagen detrás del texto */
 }
+
+.home-image{
+  filter: drop-shadow(0px 0.75568px 8.62158px rgba(0, 0, 0, 0.12))
+        drop-shadow(0px 1.91116px 21.80462px rgba(0, 0, 0, 0.17))
+        drop-shadow(0px 3.89859px 44.47939px rgba(0, 0, 0, 0.22))
+        drop-shadow(0px 8.03036px 91.61913px rgba(0, 0, 0, 0.27))
+        drop-shadow(0px 22px 251px rgba(0, 0, 0, 0.39));
+
+}
+
+.title{
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
