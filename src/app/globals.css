@@ -16,3 +16,14 @@
     border-radius: 20px;       /* roundness of the scroll thumb */
     border: 3px solid rgba(255, 166, 0, 0);  /* creates padding around scroll thumb */
   }
+
+
+  .text-container {
+    position: relative; /* Establece la posición relativa */
+    z-index: 1; /* Coloca el texto por encima de la imagen */
+}
+
+.image-container {
+    position: relative; /* Establece la posición relativa */
+    z-index: 0; /* Coloca la imagen detrás del texto */
+}

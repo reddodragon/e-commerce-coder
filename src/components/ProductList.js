@@ -1,4 +1,4 @@
-import { mockData } from "@/app/mock/mockData"; 
+import { mockData } from "@/mock/mockData";  
 import ProductCard from "./ProductCard";
 
 

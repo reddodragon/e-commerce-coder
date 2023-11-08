@@ -1,4 +1,4 @@
-import { Inter } from "next/font/google";
+
 import "./globals.css";
 import Link from "next/link";
 
@@ -9,6 +9,9 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
     return (
+
+      <html lang="en">
+      <body>
       <div className="overflow-hidden bg-[#110d07] flex flex-col items-center justify-center h-screen">
       
       <div className="shadow-[0px_4px_4px_0px_rgba(0,_0,_0,_0.25)] h-screen bg-[#1e1305] w-4/5">
@@ -20,5 +23,8 @@ export default function RootLayout({ children }) {
         {children}
       </div>
     </div>
+      </body>
+      </html>
+      
     );
 }
