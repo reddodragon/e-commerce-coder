@@ -1,7 +1,7 @@
-import CategoriesMenu from "@/components/CategoriesMenu"
-import ProductsList from "@/components/ProductList"
+import CategoriesMenu from "../../../components/CategoriesMenu"
+import ProductsList from "../../../components/ProductList"
 
-export async function generateMetadata({params, searchParams}, parent) {
+export async function generateMetadata({params }) {
 
     return {
         title: `Pure Audio - ${params.category}`,

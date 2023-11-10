@@ -48,6 +48,7 @@ const CartButton = () => {
           </div>
           <div className="p-4">
             <Link onClick={() => closeMenu()} className='uppercase text-sm font-semibold p-3 px-5 bg-[#f1720c] rounded-3xl' href="/cart">Ver Carrito</Link>
+              
           </div>
         </div>
       </div>

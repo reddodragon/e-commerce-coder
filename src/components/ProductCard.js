@@ -5,7 +5,7 @@ const ProductCard = ({ item }) => {
     return (
         <article className="bg-[#ede0d0] rounded-3xl">
             <Link
-                href={`/productos/detail/${item.id}`}
+                href={`/products/detail/${item.id}`}
                 className="flex flex-col gap-1 justify-center pb-1 items-center"
             >
                 <div className="flex items-center" >

@@ -1,5 +1,5 @@
 'use client'
-import Star from './Star';
+import Star from './svg/Star';
 
 const Rating = (props) => {
   const starCount = props.stars;
