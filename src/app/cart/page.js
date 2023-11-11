@@ -36,13 +36,13 @@ const Cart = () => {
     };
 
     return (
-        <div className="shadow-xl mx-20 rounded-3xl text-[#1e1305] h-4/5 bg-[#ede0d0]">
+        <div className="shadow-xl mt-1 mx-auto w-5/6 rounded-3xl text-[#1e1305] h-4/5 bg-[#ede0d0]">
             <div className="flex flex-col justify-between items-center">
                 <div className="flex py-4 justify-between mb-2">
                     <span className="uppercase text-sm font-semibold">Total:</span>
                     <span>${getTotalPrice()}</span>
                 </div>
-                <div className="max-h-96 scroll overflow-y-auto"> {/* Ajusta la altura máxima según tus necesidades */}
+                <div className="max-h-96 scroll w-5/6 overflow-y-auto"> {/* Ajusta la altura máxima según tus necesidades */}
                     <table className="table-auto w-full">
                         <tbody>
                             {cartItems.map((item) => (

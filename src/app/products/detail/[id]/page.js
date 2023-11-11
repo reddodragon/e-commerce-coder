@@ -3,6 +3,7 @@ import Image from "next/image";
 import Rating from "../../../../components/Rating";
 import mockData from "../../../../mock/mockData";
 import { useState } from "react";
+import ErrorPage from "../../../not-found";
 
 const ProductDetail = ({ params }) => {
     const { id } = params;
@@ -13,7 +14,7 @@ const ProductDetail = ({ params }) => {
 
     // Check if item exists
     if (!item) {
-        return <div>Item not found</div>;
+        return <ErrorPage errorMessage='Este ítem no existe'/>;
     }
 
     const handleIncrement = () => {
@@ -32,7 +33,7 @@ const ProductDetail = ({ params }) => {
     };
 
     return (
-        <div className="flex bg-[#ede0d0] rounded-3xl mx-20 my-8 p-8">
+        <div className="flex bg-[#ede0d0] justify-between rounded-3xl mx-20 my-8 p-8">
             <div className="flex flex-col justify-center items-center">
                 <h1 className="text-3xl font-bold mb-2">{item.name}</h1>
                 <h2 className="uppercase text-[#171515] mb-4">{item.brand}</h2>

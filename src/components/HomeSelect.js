@@ -27,7 +27,7 @@ const HomeSelect = () => {
     };
 
     return (
-        <div className="bg-[#ede0d0] h-72  w-5/6 flex justify-center items-center  rounded-3xl">
+        <div className="bg-[#ede0d0] h-full  w-5/6 flex justify-center items-center  rounded-3xl">
             <div className="w-1/3 flex flex-col items-center">
                 <p className="px-5">{selectedItem.description}</p>
             </div>

@@ -1,4 +1,9 @@
+'use client'
+import { useRouter } from "next/navigation";
+
 const AuthContainer = () => {
+  const router = useRouter();
+  
     return (
 <div className="flex items-center justify-center h-screen ">
       <div className="bg-1e1305 border rounded-3xl p-8 max-w-md w-full bg-[#ede0d0] text-[#1e1305]">
@@ -23,6 +28,8 @@ const AuthContainer = () => {
           <button
             type="submit"
             className="p-2 rounded-full w-full bg-[#f1720c]"
+            onSubmit={() => router.replace('/')}
+            
           >
             Sign In
           </button>

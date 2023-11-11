@@ -3,11 +3,11 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 const links = [
-    { label: "Todos", href: "/productos/all" },
-    { label: "Speakers", href: "/productos/speaker" },
-    { label: "Headphones", href: "/productos/headphones" },
-    { label: "Amplifiers", href: "/productos/amplifier" },
-    { label: "Microphones", href: "/productos/microphones" },
+    { label: "Todos", href: "/products/all" },
+    { label: "Speakers", href: "/products/speaker" },
+    { label: "Headphones", href: "/products/headphones" },
+    { label: "Amplifiers", href: "/products/amplifier" },
+    { label: "Microphones", href: "/products/microphones" },
 ];
 
 const CategoriesMenu = () => {
