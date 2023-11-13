@@ -1,23 +1,15 @@
+import ProductsList from "../../../components/products/ProductList";
 
-import ProductsList from "../../../components/ProductList"
-
-export async function generateMetadata({params }) {
-
+export async function generateMetadata({ params }) {
     return {
         title: `Pure Audio - ${params.category}`,
-    }
+    };
 }
 
-const Productos = ({params}) => {
-    const { category } = params
+const Productos = ({ params }) => {
+    const { category } = params;
 
-    return (
+    return <ProductsList category={category} />;
+};
 
-
-                <ProductsList category={category}/>
-
-    )
-}
-
-export default Productos
-
+export default Productos;

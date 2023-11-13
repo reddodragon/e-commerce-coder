@@ -1,4 +1,5 @@
-import CategoriesMenu from "../../../components/CategoriesMenu"
+import CategoriesMenu from "../../../components/products/CategoriesMenu"
+
 
 export default function CategoryLayout({ children }) {
 

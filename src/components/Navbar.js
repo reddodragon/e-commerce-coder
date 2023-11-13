@@ -1,6 +1,6 @@
 import Link from "next/link";
 import React from "react";
-import CartButton from "./CartButton";
+import CartButton from "./cart/CartButton/CartButton";
 
 const Navbar = () => {
     return (
@@ -23,4 +23,4 @@ const Navbar = () => {
     );
 };
 
-export default Navbar
+export default Navbar;

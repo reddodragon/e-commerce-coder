@@ -1,4 +1,4 @@
-import mockData  from "../mock/mockData";
+import mockData from "../../mock/mockData";
 import ProductCard from "./ProductCard";
 
 const ProductsList = ({ category }) => {
