@@ -16,7 +16,7 @@ const getProductById = async (id) => {
   return null;
 };
 
-const ProductDetail = async({ params }) => {
+const ProductDetail = async ({ params }) => {
   const { id } = params;
   const item = await getProductById(id);
 
@@ -25,7 +25,7 @@ const ProductDetail = async({ params }) => {
   }
 
   return (
-    <div className="flex bg-[#ede0d0] rounded-3xl mx-20 my-8 p-8">
+    <div className="flex bg-[#ede0d0] justify-around rounded-3xl mx-20 my-8 p-8">
       <ImageDetail item={item} />
       <DataDetail item={item} />
     </div>

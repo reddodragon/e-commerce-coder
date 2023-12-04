@@ -1,14 +1,17 @@
 'use client';
 import { createContext, useState, useEffect } from 'react';
+import { useRouter } from 'next/navigation'
 
 const EcomerceContext = createContext();
 
 const EcomerceProvider = ({ children }) => {
-  // Obtener el carrito de localStorage al inicio
+
+  const router = useRouter()
   const initialCart = JSON.parse(localStorage.getItem('cart')) || [];
   const [cart, setCart] = useState(initialCart);
+  const [editando, setEditando] = useState(false);
+  const [itemEditandoId, setItemEditandoId] = useState(null); // Nuevo estado para almacenar el ID del item en edición
 
-  // Actualizar localStorage cada vez que el carrito cambie
   useEffect(() => {
     localStorage.setItem('cart', JSON.stringify(cart));
   }, [cart]);
@@ -23,16 +26,46 @@ const EcomerceProvider = ({ children }) => {
     } else {
       setCart((prevCart) => [...prevCart, product]);
     }
+    router.push(`/cart`);
   };
 
   const removeFromCart = (productId) => {
     setCart((prevCart) => prevCart.filter((item) => item.id !== productId));
   };
 
-  const palabra = 'hola'
+  const handleEdit = (itemId, newQuantity) => {
+    // Actualiza la cantidad en el carrito
+    const updatedCart = cart.map((item) => {
+      if (item.id === itemId) {
+        return {
+          ...item,
+          quantity: newQuantity,
+        };
+      }
+      return item;
+    });
 
+    setCart(updatedCart);
+    setEditando(false); // Cambia el estado de edición a false
+    router.push(`/cart`);
+  };
+
+  const handleEditar = (itemId) => {
+    setEditando(true);
+    setItemEditandoId(itemId);
+    router.push(`/products/detail/${itemId}`);
+  };
+  
   return (
-    <EcomerceContext.Provider value={{ cart, addToCart, removeFromCart, palabra }}>
+    <EcomerceContext.Provider value={{
+      cart,
+      addToCart,
+      removeFromCart,
+      handleEditar,
+      handleEdit, // Agregamos la nueva función handleEdit al contexto
+      editando,
+      itemEditandoId,
+    }}>
       {children}
     </EcomerceContext.Provider>
   );

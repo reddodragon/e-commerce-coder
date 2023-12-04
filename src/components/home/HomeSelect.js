@@ -10,6 +10,7 @@ import Rating from '../Rating'; // Asegúrate de importar Rating si aún no lo h
 
 const HomeSelect = ({limitedData}) => {
   const [selectedItem, setSelectedItem] = useState(limitedData[0]);
+  console.log(limitedData)
 
   const handleButtonClick = (newSelectedItem) => {
     setSelectedItem(newSelectedItem);
@@ -33,7 +34,8 @@ const HomeSelect = ({limitedData}) => {
         </Link>
       </div>
 
-      <div className="w-1/3">
+      <div className="w-1/3 flex flex-col items-center">
+        <h2 className=' mb-10 font-bold text-xl text-[#f1720c]'>{selectedItem?.name}</h2>
         <Rating stars={selectedItem?.stars} reviews={selectedItem?.reviews} />
       </div>
     </div>

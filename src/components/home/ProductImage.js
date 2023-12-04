@@ -2,10 +2,11 @@ import Image from "next/image";
 import Link from "next/link";
 
 const ProductImage = ({ selectedItem }) => {
+    console.log(selectedItem)
     return (
         <div className="w-1/3 flex flex-col items-center">
             <Link href={`/products/detail/${selectedItem.id}`}>
-                <div className="w-44 h-44 flex items-center">
+            <div className="w-44 h-44 hover:w-48  flex items-center transition-all duration-300 ease-in-out">
                     <Image
                         width={200}
                         height={500}

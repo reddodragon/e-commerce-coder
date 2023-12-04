@@ -2,6 +2,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
+
 const links = [
     { label: "Todos", href: "/products/all" },
     { label: "Speakers", href: "/products/speaker" },
@@ -11,13 +12,17 @@ const links = [
 ];
 
 const CategoriesMenu = () => {
+
     const pathname = usePathname();
+
+
+
 
     return (
         <div className="bg-[#ede0d0] h-96 mt-5  flex flex-col w-1/5 gap-24 rounded-tr-3xl rounded-br-3xl">
             <div className=" flex flex-col gap-4 justify-between ml-6 m-4 items-start">
                 <div className="bg-[#1e1305] flex justify-center items-center p-1 self-stretch rounded-3xl">
-                    <p className="text-[#ede0d0]">Search</p>
+                    <p className="text-white">Seacrh</p>
                 </div>
                 {links.map((link) => (
                     <Link
