@@ -10,9 +10,6 @@ const DataDetail = ({ item }) => {
             </p>
             <QuantityDetail item={item} />
 
-            <button className="bg-[#f1720c] px-4 py-2 rounded-3xl">
-                Add to Cart
-            </button>
 
             <div>
                 <Rating stars={stars} reviews={reviews} />

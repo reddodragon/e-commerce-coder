@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import EcomerceContext from "../context/EcomerceContext";
+import EcomerceContext from "../context/appContext";
 
 const useCommerce = () => {
     return useContext(EcomerceContext)

@@ -1,11 +1,14 @@
+'use client'
 import Image from "next/image";
+import useCommerce from "../../../hooks/useCommerce";
 
-const CartTable = ({ cartItems }) => {
+const CartTable = () => {
+    const { cart } = useCommerce(); 
     return (
         <div className="max-h-96 scroll w-5/6 overflow-y-auto">
             <table className="table-auto w-full">
                 <tbody>
-                    {cartItems.map((item) => (
+                    {cart.map((item) => (
                         <tr key={item.id}>
                             <td className="px-4 py-2">
                                 <div className="w-20 h-20">
