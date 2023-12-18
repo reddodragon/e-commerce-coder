@@ -8,7 +8,7 @@ const ProductImageCell = ({ img }) => {
                     width={100}
                     height={100}
                     alt="Hola"
-                    src={`/imgs/products/${img}.png`}
+                    src={img}
                     className="max-w-full max-h-full object-contain"
                 />
             </div>

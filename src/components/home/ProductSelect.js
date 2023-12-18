@@ -19,8 +19,8 @@ const ProductSelect = ({ limitedData, selectedItem, onButtonClick }) => {
                         <Image
                             width={75}
                             height={75}
-                            alt="Hola"
-                            src={`/imgs/products/${item.img}.png`}
+                            alt={item.name}
+                            src={item.img}
                             className="max-w-full max-h-full object-contain"
                         />
                     </div>

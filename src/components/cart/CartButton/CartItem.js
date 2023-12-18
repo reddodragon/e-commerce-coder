@@ -7,14 +7,13 @@ const CartItem = ({ item }) => {
   const { removeFromCart } = useContext(EcomerceContext);
 
   const handleRemoveFromCart = () => {
-    // Llama a la función removeFromCart del contexto con el id del producto
     removeFromCart(item.id);
   };
 
   return (
     <div className="flex items-center justify-between gap-1">
       <Image
-        src={`/imgs/products/${item.img}.png`}
+        src={item.img}
         alt={item.name}
         width={30}
         height={30}
@@ -26,7 +25,6 @@ const CartItem = ({ item }) => {
         <p>{item.quantity}</p>
       </div>
 
-      {/* Agrega el botón de eliminar con la función handleRemoveFromCart */}
       <button onClick={handleRemoveFromCart}>
         <CloseButton color="#1e1305" />
       </button>

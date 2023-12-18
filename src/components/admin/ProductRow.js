@@ -14,7 +14,7 @@ const ProductRow = ({ item, isHighlighted }) => {
             <ProductInfoCell value={item.brand} />
             <ProductInfoCell value={item.description} />
             <ProductInfoCell value={`$${item.price}`} />
-            <ProductActionsCell />
+            <ProductActionsCell productId={item.id} />
             <ProductInfoCell value={isHighlighted ? "Home" : ""} />
         </tr>
     );

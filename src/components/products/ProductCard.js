@@ -14,7 +14,7 @@ const ProductCard = ({ item }) => {
                             width={200}
                             height={200}
                             alt="Hola"
-                            src={`/imgs/products/${item.img}.png`}
+                            src={item.img}
                             className="max-w-full max-h-full object-contain"
                         />
                     </div>

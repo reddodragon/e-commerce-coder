@@ -8,7 +8,7 @@ const ImageDetail = ({ item }) => {
             <h2 className="uppercase text-[#171515] mb-4">{brand}</h2>
             <div className="w-72 h-72 flex justify-center items-center mb-4">
                 <Image
-                    src={`/imgs/products/${img}.png`}
+                    src={img}
                     alt={name}
                     width={200}
                     height={200}

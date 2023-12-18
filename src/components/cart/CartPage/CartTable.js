@@ -33,7 +33,7 @@ const CartTable = () => {
                                         width={100}
                                         height={100}
                                         alt={item.name}
-                                        src={`/imgs/products/${item.img}.png`}
+                                        src={item.img}
                                         className="max-w-full max-h-full object-contain"
                                     />
                                 </div>

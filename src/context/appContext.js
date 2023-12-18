@@ -26,7 +26,6 @@ const EcomerceProvider = ({ children }) => {
     } else {
       setCart((prevCart) => [...prevCart, product]);
     }
-    router.push(`/cart`);
   };
 
   const removeFromCart = (productId) => {

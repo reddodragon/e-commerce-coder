@@ -11,7 +11,7 @@ const ProductImage = ({ selectedItem }) => {
                         width={200}
                         height={500}
                         alt="Hola"
-                        src={`/imgs/products/${selectedItem.img}.png`}
+                        src={selectedItem.img}
                         className="home-image mb-16"
                     />
                 </div>
