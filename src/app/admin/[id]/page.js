@@ -1,13 +1,11 @@
+import EditForm from '../../../components/admin/edit/EditForm';
 
-
-import EditProductForm from '../../components/EditProductForm';
-
-const EditProductPage = ({id}) => {
-
+const EditProductPage = ({ params }) => {
+    const { id } = params;
     return (
         <div>
             <h1>Editar Producto</h1>
-            <EditProductForm productId={id} />
+            <EditForm productId={id} />
         </div>
     );
 };
