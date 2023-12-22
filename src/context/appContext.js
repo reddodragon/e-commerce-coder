@@ -1,20 +1,28 @@
 'use client';
 import { createContext, useState, useEffect } from 'react';
-import { useRouter } from 'next/navigation'
+import { useRouter } from 'next/navigation';
 
 const EcomerceContext = createContext();
 
 const EcomerceProvider = ({ children }) => {  
-
-  const router = useRouter()
-  const initialCart = JSON.parse(localStorage.getItem('cart')) || [];
-  const [cart, setCart] = useState(initialCart);
+  const router = useRouter();
+  const [cart, setCart] = useState([]);
   const [editando, setEditando] = useState(false);
   const [itemEditandoId, setItemEditandoId] = useState(null);
 
-
+  // Inicializar el carrito desde localStorage solo en el lado del cliente
   useEffect(() => {
-    localStorage.setItem('cart', JSON.stringify(cart));
+    if (typeof window !== 'undefined') {
+      const initialCart = JSON.parse(localStorage.getItem('cart')) || [];
+      setCart(initialCart);
+    }
+  }, []);
+
+  // Actualizar localStorage cuando el carrito cambia
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      localStorage.setItem('cart', JSON.stringify(cart));
+    }
   }, [cart]);
 
   const addToCart = (product) => {
@@ -34,7 +42,6 @@ const EcomerceProvider = ({ children }) => {
   };
 
   const handleEdit = (itemId, newQuantity) => {
-    // Actualiza la cantidad en el carrito
     const updatedCart = cart.map((item) => {
       if (item.id === itemId) {
         return {
@@ -46,7 +53,7 @@ const EcomerceProvider = ({ children }) => {
     });
 
     setCart(updatedCart);
-    setEditando(false); // Cambia el estado de edición a false
+    setEditando(false);
     router.push(`/cart`);
   };
 
@@ -58,7 +65,9 @@ const EcomerceProvider = ({ children }) => {
 
   const emptyCart = () => {
     setCart([]); 
-    localStorage.setItem('cart', JSON.stringify([])); 
+    if (typeof window !== 'undefined') {
+      localStorage.setItem('cart', JSON.stringify([])); 
+    }
   };
   
   return (

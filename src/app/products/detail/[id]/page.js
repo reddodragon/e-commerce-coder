@@ -1,6 +1,6 @@
 import { collection, getDocs, query, where } from 'firebase/firestore';
 import { db } from '../../../../firebase/config';
-import ErrorPage from '../../../not-found';
+import ErrorPage from '../../../error';
 import ImageDetail from '../../../../components/detail/ImageDetail';
 import DataDetail from '../../../../components/detail/DataDetail';
 
