@@ -1,4 +1,4 @@
-import QuantityDetail from "../detail/quantityDetail";
+import QuantityDetail from "./QuantityDetail";
 import Rating from "../Rating";
 
 const DataDetail = ({ item }) => {
