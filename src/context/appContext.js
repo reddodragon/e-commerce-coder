@@ -4,13 +4,14 @@ import { useRouter } from 'next/navigation'
 
 const EcomerceContext = createContext();
 
-const EcomerceProvider = ({ children }) => {
+const EcomerceProvider = ({ children }) => {  
 
   const router = useRouter()
   const initialCart = JSON.parse(localStorage.getItem('cart')) || [];
   const [cart, setCart] = useState(initialCart);
   const [editando, setEditando] = useState(false);
-  const [itemEditandoId, setItemEditandoId] = useState(null); // Nuevo estado para almacenar el ID del item en edición
+  const [itemEditandoId, setItemEditandoId] = useState(null);
+
 
   useEffect(() => {
     localStorage.setItem('cart', JSON.stringify(cart));
@@ -54,6 +55,11 @@ const EcomerceProvider = ({ children }) => {
     setItemEditandoId(itemId);
     router.push(`/products/detail/${itemId}`);
   };
+
+  const emptyCart = () => {
+    setCart([]); 
+    localStorage.setItem('cart', JSON.stringify([])); 
+  };
   
   return (
     <EcomerceContext.Provider value={{
@@ -61,9 +67,10 @@ const EcomerceProvider = ({ children }) => {
       addToCart,
       removeFromCart,
       handleEditar,
-      handleEdit, // Agregamos la nueva función handleEdit al contexto
+      handleEdit, 
       editando,
       itemEditandoId,
+      emptyCart
     }}>
       {children}
     </EcomerceContext.Provider>

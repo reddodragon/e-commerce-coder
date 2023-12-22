@@ -2,6 +2,7 @@ import Image from "next/image";
 
 const ImageDetail = ({ item }) => {
     const { name, brand, img } = item;
+    console.log(img)
     return (
         <div className="flex flex-col justify-center items-center">
             <h1 className="text-3xl font-bold mb-2">{name}</h1>

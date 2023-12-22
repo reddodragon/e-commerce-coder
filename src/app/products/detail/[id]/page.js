@@ -20,6 +20,7 @@ const ProductDetail = async ({ params }) => {
   const { id } = params;
   const item = await getProductById(id);
 
+
   if (!item) {
     return <ErrorPage errorMessage="Este ítem no existe" />;
   }
