@@ -5,7 +5,7 @@ import { collection, getDocs, query, where } from 'firebase/firestore';
 import { db } from '../firebase/config'; // Replace with the correct path
 
 
-export async function getProducts() {
+async function getProducts() {
   const productsRef = collection(db, 'Productos');
   const q = query(productsRef, where('id', 'in', [1, 2, 3])); // Fetch limited data for product IDs 1, 2, and 3
   const querySnapshot = await getDocs(q);
